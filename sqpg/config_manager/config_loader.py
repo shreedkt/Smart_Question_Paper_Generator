@@ -1,26 +1,34 @@
-"""
-Module Name:
-    config_loader.py
+import json
+from pathlib import Path
 
-Purpose:
-    Load application configuration.
 
-Author:
-    Deepak Kumar Tiwari
-
-Project:
-    Smart Question Paper Generator
-
-Created On:
-    20 July 2026
-"""
 def load_configuration():
     """
-    Load all application configuration.
+    Load application configuration.
 
     Returns
     -------
     dict
-        Application configuration.
+        Configuration dictionary.
     """
-    pass
+
+    config_path = Path("config") / "settings.json"
+
+    try:
+
+        with open(config_path, "r", encoding="utf-8") as file:
+            configuration = json.load(file)
+
+        return configuration
+
+    except FileNotFoundError:
+
+        print("Error: settings.json not found.")
+
+        return None
+
+    except json.JSONDecodeError:
+
+        print("Error: Invalid JSON format.")
+
+        return None

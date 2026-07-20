@@ -1,0 +1,15 @@
+{
+    "college_name": "R.V.S College of Engineering & Technology",
+    "department": "Department of Bachelor in Computer Applications",
+
+    "default_time": "90 Minutes",
+    "default_marks": 20,
+
+    "question_bank_path": "data/question_bank.csv",
+
+    "output_directory": "output/",
+
+    "template_directory": "templates/",
+
+    "version": "0.1.0"
+}
